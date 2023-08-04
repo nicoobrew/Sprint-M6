@@ -1,0 +1,96 @@
+img {
+    height: 250px;
+    width: 100px;
+}
+
+.imgLogo {
+  width: 120px;
+  height: auto;
+   
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 4rem;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+.font-button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
+.product-details {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    color: #2ecc71;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.imgCardProducto {
+    height: 350px;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Estilos para el enlace circular */
+.dark-mode-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    background-image: linear-gradient(180deg, #fff 50%, #ccc 50%);
+}
+
+/* Estilos para el enlace circular en modo oscuro */
+.dark-mode.dark-mode-toggle {
+    background-image: linear-gradient(180deg, #ccc 50%, #fff 50%);
+    /* Otros estilos para el modo oscuro si es necesario */
+}
+
+.dark-mode .card {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-color: #ffffff;
+
+}
+
+
+
+/* Estilos para el footer en modo claro */
+.footer {
+    color: #333;
+    /* Color de las letras en modo claro (negro) */
+}
+
+
+/* Estilos para el texto del footer en modo oscuro */
+.dark-mode .footer,
+.dark-mode .footer a {
+    color: #fff;
+    /* Color de las letras en modo oscuro (blanco) */
+}

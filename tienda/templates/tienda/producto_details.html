@@ -1,0 +1,78 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% block contenido %}
+
+
+
+
+<header>
+  <!-- Background image -->
+  <div class="position-relative bg-image" style="background-image: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px;">
+    <div class="position-absolute w-100 h-100" style="background-color: rgba(44, 44, 44, 0.527);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white text-center px-4">
+          <h1 class="mb-3">{{ object.titulo }}</h1>
+          <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{ object.imagen.url }}" class="card-img-top imgCardProducto" alt="Fissure in Sandstone" />
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ object.titulo }}</h5>
+          <p class="card-text product-description">{{ object.descripcion }}</p>
+          <p class="product-price">Precio: ${{ object.precio }}</p>
+
+          <div class="row align-items-center">
+            <div class="col-md-4 mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Cantidad:</span>
+                <button class="btn btn-outline-secondary" type="button" id="decrement-btn">-</button>
+                <input type="text" class="form-control" id="cantidad" value="1" readonly>
+                <button class="btn btn-outline-secondary " type="button" id="increment-btn">+</button>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <a href="#!" class="btn btn-primary me-3 font-button">Añadir al Carrito</a>
+              <a href="#!" class="btn btn-primary font-button">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const incrementBtn = document.getElementById("increment-btn");
+    const decrementBtn = document.getElementById("decrement-btn");
+    const cantidadInput = document.getElementById("cantidad");
+
+    incrementBtn.addEventListener("click", function () {
+      let cantidad = parseInt(cantidadInput.value);
+      cantidadInput.value = cantidad + 1;
+    });
+
+    decrementBtn.addEventListener("click", function () {
+      let cantidad = parseInt(cantidadInput.value);
+      if (cantidad > 1) {
+        cantidadInput.value = cantidad - 1;
+      }
+    });
+  });
+</script>
+
+{% endblock %}
